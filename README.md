@@ -1,2 +1,2 @@
-# Site-Project
-Projeto facultativo feito por Katsu Mouley, CatPieLeaf and others.
+# FunnyBots site
+Project created by KatsuMouley, CatPieLeaf and others.
