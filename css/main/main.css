@@ -83,7 +83,6 @@ body{
     border-radius: 25px;
     transition: all 0.5s;
     transform-origin: left;
-    margin-bottom: 10px;
 }
 .profileconfig{
     width: 80px;
