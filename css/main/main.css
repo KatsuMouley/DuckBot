@@ -1,66 +1,230 @@
-.header {
-    width: 100%;
-    height: 120px;
-    border-width: 1px; /* Largura da borda definida como 1px */
-    border-color: black; /* Cor da borda definida como preto */
-    border-style: solid; /* Estilo da borda como "solid" (linha contínua) */
-    position: fixed;
+
+/*Generals*/
+h3{
+    transition: color 0.7s;
+}
+h3:hover{
+    color: rgb(255, 103, 255);
+}
+
+a, button{
+    text-decoration: none;
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+    border: none;
+    transition: all 0.6s;
+}
+
+button:hover{
+    transform: scale(1.5);
+}
+body{
+    max-height: 100vh;
+}
+
+/*Class*/
+
+/*Main section*/
+.main {
+    width: auto;
+    display: grid;
+    grid-template-columns: 1fr 3fr ;
+    position: absolute;
     top: 0;
     left: 0;
-    display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
-    gap: 10px;
-}
-
-.blocks{
-    font-size: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.center{
-    position: fixed;
-    top: 100px;
-    width: 100%;
-    height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.start_chat{
-    height: 75px;
-    width: 350px;
-    font-size: 45px;
-    background-color: white;
-    border-width: 1px; /* Largura da borda definida como 1px */
-    border-color: black; /* Cor da borda definida como preto */
-    border-style: solid;
-    transition: transform 0.4s, color 1s, background_color 1s;
-}
-
-.start_chat:hover{
-    transform: scale(1.2);
-    background-color: black;
-    color: white;
-    border: none;
-}
-
-.footer {
-    width: 100%;
-    height: 35px;
-    position: fixed;
+    right: 0;
     bottom: 0;
-    left: 0;
+}
+/*Left body section*/
+.bodyleft{
+    background-color: rgb(32, 32, 32);
     display: grid;
-    grid-template-columns: repeat(3, 2fr);
-    gap: 10px;
+    grid-template-rows: 2fr 6fr;
+    width: auto;
 }
 
-.bottom_blocks{
+
+/*User account section*/
+.User_Account{
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+}
+/*Account access*/
+.Account_access{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+/*Login and Register buttons*/
+.Register, .Login{
+    background-color: rgb(9, 189, 69);
+    border-radius: 25px;
+    height: calc(100% - 10px);
+    width: calc(100% - 10px);
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    transition: all 0.6s;
+}
+
+.Register:hover, .Login:hover{
+    transform: scale(1.05);
+    background-color: rgb(160, 7, 127);
+}
+
+/*Profile info*/
+.ProfileInfo{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 15px;
+}
+.profileconfig{
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    background-image: url(user.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.UserName{
+    align-self: center;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    transition: all 0.5s;
+    transform-origin: left;
+}
+.UserName:hover{
+transform: scale(1.1);
+}
+
+/*Bots selection section*/
+.Select_bots{
+    display: grid;
+    grid-template-rows: repeat( 4, 1fr);
+}
+/*Bot section*/
+.bot {    
+    padding-right: 10px;
+    position: relative;
+    align-self: flex-start;
+    border-radius: 50px 20px 20px 50px;
+    background-color: rgb(20, 20, 20);
+    width: auto;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 5px;
+    transition: transform 0.4s, background-color 0s;
+    transform-origin: left;
+}
+
+.bot:hover {
+    transform: scale(1.1); 
+}
+.bot:active {
+    background-color: rgb(76, 5, 78);
+}
+
+/*Bot profile*/
+.BotImg{    
+    max-width: 75px;
+    max-height: 75px;
+    min-width: 50px; 
+    border-radius: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    align-self: flex-start;
+    padding-top: 100%;
+}
+
+.catbotimg{
+    background-image: url(kitten.jpg);
+}
+.duckbot{
+    background-image: url(duck.jpg);
+}
+.dogbot{
+    background-image: url(Puppy.jpg);
+}
+.chatgptbot{
+    background-image: url(chatgpt.jpg);
+}
+.sadguy{
+    background-image: url(SigmaDog.jpg);
+}
+
+/*Bot description*/
+.botdescription{
+    color: white;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+
+@media screen and (max-width: 768px) {
+    .botdescription {
+        font-size: 0.8rem;
+    }
+}
+/*Notifications*/
+.chatsNotifications{
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+    width: auto;
+    height: auto;
+    padding: 5px;
     font-size: 15px;
-    display: flex;
-    justify-content: start;
-    align-items: flex-end;
+    background-color: rgb(208, 255, 0);
+    color: rgb(0, 0, 0);
+    font-weight: 900;
+    border-radius: 25px;
+}
+
+/*Right body section*/
+.bodyright {
+    width: auto;
+    position: relative;
+    display: grid;
+    grid-template-rows: 9fr 1fr;
+    justify-content: center;
+}
+
+/*Background Image*/
+
+.bodyright::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('duck.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    filter: brightness(0.5);
+    z-index: -1;
+}
+
+/*Button*/
+.Start_Button {
+    width: auto;
+    font-size: 40px;
+    font-weight: bolder;
+    font-family: 'Roboto', sans-serif;
+    align-self: center;
+}
+/*Credits*/
+.credits{
+    background-color: transparent;
+    width: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: auto;
+    font-size: 15px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 25px;
 }
