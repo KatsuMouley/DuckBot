@@ -3,7 +3,7 @@
 h3{
     transition: color 0.7s;
 }
-h3:hover{
+h3:hover, button:hover{
     color: rgb(255, 103, 255);
 }
 
@@ -72,6 +72,7 @@ body{
 .Register:hover, .Login:hover{
     transform: scale(1.05);
     background-color: rgb(160, 7, 127);
+    color: white;
 }
 
 /*Profile info*/
@@ -100,8 +101,8 @@ body{
     font-size: 20px;
 }
 .ProfileInfo:hover{
-transform: scale(1.1);
-cursor: pointer;
+    transform: scale(1.1);
+    cursor: pointer;
 }
 
 /*Bots selection section*/

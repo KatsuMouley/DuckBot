@@ -1,0 +1,46 @@
+/*general*/
+main{
+    width: auto;
+    display: grid;
+    grid-template-columns: 1fr 3fr 2fr;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+/*body leftside*/
+.bodyleft{
+    background-color: rgb(37, 37, 37);
+}
+/*body midsection*/
+.midsection{
+    background-color: rgb(80, 80, 80);    
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(255, 255, 255);
+}
+.midsection::-webkit-scrollbar-track {
+    background-color:transparent; 
+}
+.midsection::-webkit-scrollbar-thumb {
+    background-color: rgb(29, 29, 29); /* Cor da barra de rolagem (cursor) */
+    border-radius: 25px;
+}
+.midsection::-webkit-scrollbar {
+    width: 10px; /* Largura da barra de rolagem (WebKit) */
+}
+.content{
+    height: 4100px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+/*body rightside*/
+.bodyright{
+    background-color: rgb(26, 26, 26);
+}
+
