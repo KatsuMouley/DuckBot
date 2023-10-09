@@ -1,13 +1,9 @@
-
 /*Generals*/
-h3{
+h3 {
     transition: color 0.7s;
 }
-h3:hover, button:hover{
-    color: rgb(255, 103, 255);
-}
 
-a, button{
+a, button {
     text-decoration: none;
     background-color: transparent;
     color: rgb(255, 255, 255);
@@ -15,13 +11,32 @@ a, button{
     transition: all 0.6s;
 }
 
-button:hover{
-    transform: scale(1.5);
+h3:hover, button:hover {
+    color: rgb(255, 103, 255);
+}
+
+button:hover {
+    transform: scale(1.2);
+}
+
+button:hover, a:hover {
     cursor: pointer;
 }
-body{
+
+body {
     max-height: 100vh;
 }
+
+/* Estilos para o elemento hr na vertical */
+hr.vertical {
+    width: 1px; /* Espessura da linha vertical */
+    height: 100px; /* Altura da linha vertical */
+    background-color: #ccc; /* Cor da linha vertical */
+    border: none; /* Remova qualquer borda */
+    margin: 0 10px; /* Espaçamento à esquerda e à direita desejado */
+    transform: rotate(90deg); /* Rotação de 90 graus para torná-lo vertical */
+}
+
 
 /*Class*/
 
@@ -29,15 +44,16 @@ body{
 .main {
     width: auto;
     display: grid;
-    grid-template-columns: 1fr 3fr ;
+    grid-template-columns: 1fr 3fr;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
 }
+
 /*Left body section*/
-.bodyleft{
+.bodyleft {
     background-color: rgb(32, 32, 32);
     display: grid;
     grid-template-rows: 2fr 6fr;
@@ -45,20 +61,21 @@ body{
     width: auto;
 }
 
-
 /*User account section*/
-.User_Account{
+.User_Account {
     display: grid;
     grid-template-rows: 1fr 2fr;
 }
+
 /*Account access*/
-.Account_access{
+.Account_access {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 5px;
 }
+
 /*Login and Register buttons*/
-.Register, .Login{
+.Register, .Login {
     background-color: rgb(9, 189, 69);
     border-radius: 25px;
     height: calc(100% - 10px);
@@ -69,14 +86,14 @@ body{
     transition: all 0.6s;
 }
 
-.Register:hover, .Login:hover{
+.Register:hover, .Login:hover {
     transform: scale(1.05);
     background-color: rgb(160, 7, 127);
     color: white;
 }
 
 /*Profile info*/
-.ProfileInfo{
+.ProfileInfo {
     display: grid;
     grid-template-columns: 1fr 3fr;
     gap: 15px;
@@ -85,7 +102,8 @@ body{
     transition: all 0.5s;
     transform-origin: left;
 }
-.profileconfig{
+
+.profileconfig {
     width: 80px;
     height: 80px;
     border-radius: 50%;
@@ -94,24 +112,27 @@ body{
     background-repeat: no-repeat;
     background-position: center center;
 }
-.UserName{
+
+.UserName {
     align-self: center;
     color: white;
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
 }
-.ProfileInfo:hover{
+
+.ProfileInfo:hover {
     transform: scale(1.1);
     cursor: pointer;
 }
 
 /*Bots selection section*/
-.Select_bots{
+.Select_bots {
     display: grid;
-    grid-template-rows: repeat( 4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
 }
+
 /*Bot section*/
-.bot {    
+.bot {
     padding-right: 10px;
     position: relative;
     align-self: flex-start;
@@ -129,12 +150,13 @@ body{
     transform: scale(1.1);
     cursor: pointer; 
 }
+
 .bot:active {
     background-color: rgb(76, 5, 78);
 }
 
 /*Bot profile*/
-.BotImg{    
+.BotImg {
     max-width: 75px;
     max-height: 75px;
     min-width: 50px; 
@@ -146,21 +168,24 @@ body{
     padding-top: 100%;
 }
 
-.catbotimg{
+.catbotimg {
     background-image: url(kitten.jpg);
 }
-.duckbot{
+
+.duckbot {
     background-image: url(duck.jpg);
 }
-.dogbot{
+
+.dogbot {
     background-image: url(Puppy.jpg);
 }
-.sadguy{
+
+.sadguy {
     background-image: url(SigmaDog.jpg);
 }
 
 /*Bot description*/
-.botdescription{
+.botdescription {
     color: white;
     font-size: 16px;
     font-family: 'Roboto', sans-serif;
@@ -171,8 +196,9 @@ body{
         font-size: 0.8rem;
     }
 }
+
 /*Notifications*/
-.chatsNotifications{
+.chatsNotifications {
     position: absolute;
     bottom: -5px;
     right: -5px;
@@ -196,7 +222,6 @@ body{
 }
 
 /*Background Image*/
-
 .bodyright::before {
     content: "";
     position: absolute;
@@ -220,15 +245,22 @@ body{
     font-family: 'Roboto', sans-serif;
     align-self: center;
 }
+
 /*Credits*/
-.credits{
+.credits {
     background-color: transparent;
     width: auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(7, 1fr);
+    justify-content: center;
+    align-self: center;
+
     height: auto;
     font-size: 15px;
-    color: white;
     font-family: 'Roboto', sans-serif;
     border-radius: 25px;
+}
+
+.linkhover:hover {
+    color: rgb(255, 103, 255);
 }

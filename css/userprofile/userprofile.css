@@ -1,8 +1,21 @@
 /*general*/
+
+a, button{
+    text-decoration: none;
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+    border: none;
+    transition: all 0.6s;
+}
+
+button:hover, a:hover{
+    cursor: pointer;
+}
+
 main{
     width: auto;
     display: grid;
-    grid-template-columns: 1fr 3fr 2fr;
+    grid-template-columns: 1fr 5fr 3fr;
     position: absolute;
     top: 0;
     left: 0;
@@ -13,30 +26,128 @@ main{
 /*body leftside*/
 .bodyleft{
     background-color: rgb(37, 37, 37);
+    display: grid;
+    grid-template-rows: repeat(7, 1fr);
+}
+
+/*Return*/
+.Return{
+    position: fixed;
+    top: 10px;
+    left:10px;
+    padding: 15px 25px;
+    background-color: rgb(9, 189, 69);
+    border-radius: 35px;
+    transition: 0.6s;
+}
+
+.Return:hover{
+    transform: scale(1.2);
+    transform-origin: left;
+    background-color: rgb(160, 7, 127);
 }
 /*body midsection*/
 .midsection{
-    background-color: rgb(80, 80, 80);    
+    background-color: rgb(51, 51, 51);   
     overflow-y: scroll;
     scrollbar-width: thin;
     scrollbar-color: rgb(255, 255, 255);
 }
+
+/*Overflow costumization*/
 .midsection::-webkit-scrollbar-track {
     background-color:transparent; 
 }
 .midsection::-webkit-scrollbar-thumb {
-    background-color: rgb(29, 29, 29); /* Cor da barra de rolagem (cursor) */
+    background-color: rgb(158, 158, 158);
     border-radius: 25px;
+    cursor: pointer;
 }
 .midsection::-webkit-scrollbar {
-    width: 10px; /* Largura da barra de rolagem (WebKit) */
+    width: 10px; 
 }
-.content{
-    height: 4100px;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+
+
+/*content midsection*/
+.Configs{
+    background-color: rgb(36, 36, 36);
+    border-radius: 15px;
+    margin: 10px;
+}
+
+.Userpic_name{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 20px;
+}
+
+.Profileimg{
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-image: url(user.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    transition: all 0.2s;
+}
+.Profileimg:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+.Profileimg:active{
+    transform: scale(0.9);
+    cursor: pointer;
+}
+.ProfileStatusAndName{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+.Username, .BotConfig{
+    color: white;
+    font-size: 30px;
+    font-family: 'Lexend', sans-serif;
+    transition: all 0.2s;
+}
+.Username:hover{
+    transform: scale(1.01);
+    transform-origin: left;
+    cursor: pointer;
+    color: rgb(255, 230, 0);
+}
+.Username:active{
+    transform: scale(0.9);
+    cursor: pointer;
+    color: rgb(255, 0, 0);
+}
+
+.status, .Alert{
+    color: white;
+    font-size: 15px;
+    font-family: 'Lexend', sans-serif;
+    background-color: rgb(24, 24, 24);
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    padding: 15px 1px;
+    transition: all 0.2s;
+    margin: 5px;
+}
+
+.status:hover{
+    color: rgb(24, 24, 24);
+    background-color: white;
+    cursor: pointer;
+}
+.status:active, .Alert{
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 0, 0);
+}
+.Alert:hover{
+    color: rgb(255, 255, 255);
+    background-color: rgb(41, 124, 3);
+    cursor: pointer;
 }
 
 /*body rightside*/

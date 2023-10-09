@@ -1,99 +1,100 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="JS/main.js">
-        <link rel="stylesheet" href="css/main/main.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-        <title>Funny AI</title>
-    </head>
-    <body>
-        <main class="main">
-            <section class="bodyleft">
-                <div class="User_Account">
-                    <div class="Account_access">
-                        <button class="Register" onclick="window.location.href='register.html'">
-                            <p>
-                                Registre-se!
-                            </p>
-                        </button>
-                        <button class="Login" onclick="window.location.href='login.html'">
-                            <p>
-                                Faça Login!
-                            </p>
-                        </button>
-                    </div>
-                    <div class="ProfileInfo" onclick="window.location.href='userprofile.html'">
-                        <div class="profileconfig" ></div>
-                        <p class="UserName">Configure sua conta!</p>
-                    </div>
-                </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="JS/main.js">
+    <link rel="stylesheet" href="css/main/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Funny AI</title>
+</head>
+<body>
+    <main class="main">
+        <section class="bodyleft">
+            <div class="User_Account">
+                <div class="Account_access">
+                    <button class="Register" onclick="window.location.href='register.html'">
+                        <a href="register.html">
+                            Registre-se!
+                        </a>
+                    </button>
 
-                <div class="Select_bots">
-                    <div class="bot">
-                        <div class="BotImg catbotimg">
-                        </div>
-                        <div class="botdescription">
-                            <p>                              
-                                Miau! Sou um bot gato adorável. &#128062; &#128568;
-                            </p>
-                            <div class="chatsNotifications">
-                                9
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bot">
-                        <div class="BotImg duckbot">
-                        </div>
-                        <div class="botdescription">
-                            <p>                              
-                                QUACK QUACK!!!! I'M A FREAKIN DUCK!
-                            </p>
-                            <div class="chatsNotifications">
-                                20
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bot">
-                        <div class="BotImg dogbot">
-                        </div>
-                        <div class="botdescription">
-                            <p>                              
-                                I am a dog!
-                            </p>
-                            <div class="chatsNotifications">
-                                1059
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bot">
-                        <div class="BotImg sadguy">
-                        </div>
-                        <div class="botdescription">
-                            <p>                              
-                                I'm sad...
-                            </p>
-                        </div>
-                    </div>
+                    <button class="Login" onclick="window.location.href='login.html'">
+                        <a href="login.html">
+                            Faça Login!
+                        </a>
+                    </button>
                 </div>
-            </section>
-            <section class="bodyright">
-                <button class="Start_Button" onclick="window.location.href='chatbox.html'">
-                    Começar Chat
+                <button class="ProfileInfo" onclick="window.location.href='userprofile.html'">
+                    <div class="profileconfig" ></div>
+                    <p class="UserName">Guest User #12345</p>
                 </button>
-                <div class="credits">
-                    <h3 onclick="window.open('https://github.com/KatsuMouley', '_blank');">
-                        KatsuMouley GitHub
-                    </h3>
-                    <hr>
-                    <h3 onclick="window.open('https://github.com/CatPieLeaf', '_blank');">
-                        CatPieLeaf GitHub
-                    </h3>
+            </div>
+
+            <div class="Select_bots">
+                <div class="bot">
+                    <div class="BotImg catbotimg"></div>
+                    <div class="botdescription">
+                        <p>Miau! Sou um bot gato adorável. &#128062; &#128568;</p>
+                        <div class="chatsNotifications">9</div>
+                    </div>
                 </div>
-            </section>
-        </main>
-    </body>
+                <div class="bot">
+                    <div class="BotImg duckbot"></div>
+                    <div class="botdescription">
+                        <p>QUACK QUACK!!!! I'M A FREAKIN DUCK!</p>
+                        <div class="chatsNotifications">20</div>
+                    </div>
+                </div>
+                <div class="bot">
+                    <div class="BotImg dogbot"></div>
+                    <div class="botdescription">
+                        <p>I am a dog!</p>
+                        <div class="chatsNotifications">1059</div>
+                    </div>
+                </div>
+                <div class="bot">
+                    <div class="BotImg sadguy"></div>
+                    <div class="botdescription">
+                        <p>I'm sad...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="bodyright">
+            <button class="Start_Button">
+                <a class="linkhover" href="chatbox.html">
+                    Começar Chat
+                </a>
+            </button>
+            <div class="credits">
+                <h3>
+                    <a class="linkhover" href="https://github.com/KatsuMouley" target="_blank">
+                        KatsuMouley
+                    </a>
+                </h3>
+                <hr>
+                <h3>
+                    <a class="linkhover" href="https://github.com/CatPieLeaf" target="_blank">
+                        CatPieLeaf
+                    </a>
+                </h3>
+                <hr>
+                <h3>
+                    <a class="linkhover" href="https://github.com/PHDeschamps" target="_blank">
+                        PHDeschamps
+                    </a>
+                </h3>
+                <hr>
+                <h3>
+                    <a class="linkhover" href="" target="_blank">
+                        -_-_-_-_
+                    </a>
+                </h3>
+            </div>
+        </section>
+    </main>
+</body>
 </html>
