@@ -107,7 +107,7 @@ hr.vertical {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background-image: url(user.webp);
+    background-image: url(images/icons/user.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -169,19 +169,19 @@ hr.vertical {
 }
 
 .catbotimg {
-    background-image: url(kitten.jpg);
+    background-image: url(images/kittenBOG.jpg);
 }
 
 .duckbot {
-    background-image: url(duck.jpg);
+    background-image: url(images/duck\ picture.jpg);
 }
 
 .dogbot {
-    background-image: url(Puppy.jpg);
+    background-image: url(images/Puppy.jpg);
 }
 
 .sadguy {
-    background-image: url(SigmaDog.jpg);
+    background-image: url(images/SigmaDog.jpg);
 }
 
 /*Bot description*/
@@ -229,7 +229,7 @@ hr.vertical {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('duck.jpg');
+    background-image: url('images/duck\ picture.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;

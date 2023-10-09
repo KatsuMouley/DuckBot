@@ -85,7 +85,7 @@ main{
     width: 180px;
     height: 180px;
     border-radius: 50%;
-    background-image: url(user.webp);
+    background-image: url(images/icons/user.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -121,11 +121,25 @@ main{
     color: rgb(255, 0, 0);
 }
 
-.status, .Alert{
+.status{
     color: white;
     font-size: 15px;
     font-family: 'Lexend', sans-serif;
     background-color: rgb(24, 24, 24);
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    padding: 15px 1px;
+    transition: all 0.2s;
+    margin: 5px;
+}
+
+.Alert{
+    font-size: 25px;
+    font-family: 'Lexend', sans-serif;
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 0, 0);
     border-radius: 25px;
     display: flex;
     justify-content: center;
@@ -140,7 +154,7 @@ main{
     background-color: white;
     cursor: pointer;
 }
-.status:active, .Alert{
+.status:active{
     color: rgb(255, 255, 255);
     background-color: rgb(255, 0, 0);
 }
@@ -153,5 +167,8 @@ main{
 /*body rightside*/
 .bodyright{
     background-color: rgb(26, 26, 26);
+    display: grid;
+    grid-template-rows: 3fr, 1fr;
+    
 }
 
