@@ -29,12 +29,12 @@ body {
 
 /* Estilos para o elemento hr na vertical */
 hr.vertical {
-    width: 1px; /* Espessura da linha vertical */
-    height: 100px; /* Altura da linha vertical */
-    background-color: #ccc; /* Cor da linha vertical */
-    border: none; /* Remova qualquer borda */
-    margin: 0 10px; /* Espaçamento à esquerda e à direita desejado */
-    transform: rotate(90deg); /* Rotação de 90 graus para torná-lo vertical */
+    width: 1px; 
+    height: 100px;
+    background-color: #ccc;
+    border: none; 
+    margin: 0 10px;
+    transform: rotate(90deg);
 }
 
 
