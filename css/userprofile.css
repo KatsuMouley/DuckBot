@@ -1,4 +1,7 @@
 /*general*/
+body:hover{
+    cursor: default;
+}
 
 a, button{
     text-decoration: none;
@@ -214,11 +217,13 @@ main{
     height: 6vh;
 }
 .marks:hover{
-    background-color: rgb(212, 0, 255);
+    cursor: pointer;
+    background-color: rgb(238, 154, 255);
 }
 
 .marks:active{
     transition: all 0.1s;
     transform: scale(1.05);
+    background-color: rgb(212, 0, 255);
 }
 
