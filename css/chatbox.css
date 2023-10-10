@@ -1,0 +1,65 @@
+/*general*/
+body:hover{
+    cursor: default;
+}
+
+a, button{
+    text-decoration: none;
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+    border: none;
+    transition: all 0.6s;
+}
+
+button:hover, a:hover{
+    cursor: pointer;
+}
+
+main{
+    display: grid;
+    grid-template-columns: 1fr 3.7fr;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+/*regit section*/
+.rightsect{
+    width: auto;
+    background-color: rgb(53, 53, 53);
+}
+
+/*Return*/
+.Return{
+    position: fixed;
+    font-size: 1.8329vw;
+    top: 1.04167vh;
+    left: 1.04167vh;
+    padding: 1.9531vh 1.8329vw;
+    background-color: rgb(9, 189, 69);
+    border-radius: 35px;
+    transition: 0.6s;
+}
+
+.Return:hover{
+    transform: scale(1.1);
+    transform-origin: left;
+    background-color: rgb(212, 0, 255);
+}
+
+
+.leftsect{
+    width: auto;
+    display: grid;
+    grid-template-rows: 1fr 7fr;
+}
+.header{
+    width: auto;
+    background-color: rgb(82, 82, 82);
+}
+.chatbox{
+    width: auto;
+    background-color: rgb(107, 107, 107);
+}
+
