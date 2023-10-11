@@ -15,28 +15,31 @@ button:hover, a:hover{
     cursor: pointer;
 }
 
-main{
+body{
+    margin: 0;
+    padding: 0;
     display: grid;
-    grid-template-columns: 1fr 3.7fr;
+    grid-template-columns: 1fr 3.5fr;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
 }
-/*regit section*/
+/*right section*/
 .rightsect{
-    width: auto;
+    display: flex;
+    flex-direction: column;
     background-color: rgb(53, 53, 53);
 }
 
 /*Return*/
 .Return{
-    position: fixed;
-    font-size: 1.8329vw;
-    top: 1.04167vh;
-    left: 1.04167vh;
-    padding: 1.9531vh 1.8329vw;
+    width: fit-content;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.8vw;
+    margin: 1vw;
+    padding: 1.9vh 1.8vw;
     background-color: rgb(9, 189, 69);
     border-radius: 35px;
     transition: 0.6s;
@@ -48,18 +51,193 @@ main{
     background-color: rgb(212, 0, 255);
 }
 
-
-.leftsect{
-    width: auto;
+.options{
     display: grid;
-    grid-template-rows: 1fr 7fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5vh;
+    align-self: center;
+}
+.marks{
+    background-color: rgb(128, 128, 128);
+    margin: 0.5021vh;
+    padding: 0.7vh;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    transition: all 0.6s;
+}
+.marks img{
+    align-self: center;
+    height: 15vh;
+}
+
+.marks:hover{
+    cursor: pointer;
+    background-color: rgb(238, 154, 255);
+}
+
+.marks:active{
+    transition: all 0.1s;
+    transform: scale(1.03);
+    background-color: rgb(212, 0, 255);
+}
+/*left section*/
+.leftsect{
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr 5fr;
 }
 .header{
-    width: auto;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    width: 100%;
     background-color: rgb(82, 82, 82);
 }
-.chatbox{
-    width: auto;
-    background-color: rgb(107, 107, 107);
+
+
+/*Bot profile*/
+.bot {
+    background-image: url(images/duck\ picture.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 25px;
+    height: 100%;
+    width: 20%;
+    transition: all .4s;
 }
+.nome{
+    margin: 1vw;
+    font-family: 'Roboto', sans-serif;
+    font-size: 3vw;
+    font-weight: 500;
+    color: white;
+    align-self: center;
+    transition: all .5s;
+}
+
+.nome:hover{
+    transform: scale(1.1);
+    transform-origin: left;
+}
+
+@media screen and (max-width: 764px) {
+    .nome{
+        font-size: 4vh;
+    }
+}
+
+.bot:hover{
+    opacity: 0.9;
+    cursor: pointer;
+    background-position: center top;
+    background-image: url(images/StrongDuck.jpg);
+}
+
+
+.chatbox {
+    background-color: #444444;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.chat-container {
+    max-height: 70vh; /* Defina a altura máxima desejada */
+    overflow-y: auto; /* Adicione rolagem vertical quando necessário */
+}
+/*Overflow costumization*/
+.chat-container::-webkit-scrollbar-track {
+    background-color:transparent; 
+}
+.chat-container::-webkit-scrollbar-thumb {
+    background-color: rgb(94, 94, 94);
+    border-radius: 25px;
+    cursor: pointer;
+}
+.chat-container::-webkit-scrollbar {
+    width: 2vh;
+    height: 2vh;
+}
+
+.sendText {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Alinhando os elementos horizontalmente */
+    justify-content: space-between;
+    margin-top: 10px; /* Adicione algum espaço superior ao bloco de entrada de texto e botão */
+}
+
+.message, .message_bot {
+    height: fit-content;
+    width: fit-content;
+    background-color: #ffffff;
+    color: #000000;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    transition: all .4s;
+}
+
+.message:last-child {
+    margin-bottom: 0; /* Removendo a margem inferior do último elemento de mensagem */
+}
+.user-input {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.send-button {
+    background-color: #3fe41e;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px ;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+.send-button:hover{
+    background-color: #ff004c;
+    transform: translatex(-10px);
+    transform-origin: right;
+}
+.message_bot {
+    background-color: #ff5100;
+    color: #ffffff;
+    font-size: 6vh;
+}
+.message_bot:hover, .message:hover{
+    transform-origin: left;
+    transform: scale(1.1) ;
+    cursor: pointer;
+}
+.message_bot:active{
+    transform: scale(1);
+}
+
+
+@media screen and (max-width: 764px) {
+    .bot{
+        width: 45%;
+    }
+    .Return{
+        font-size: 2vh;
+    }
+    .options{
+        grid-template-columns: 1fr;
+        gap: 1vh;
+    }
+    .marks img{
+        height: 8vh;
+    }
+}
+
+
 
