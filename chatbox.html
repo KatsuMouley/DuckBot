@@ -13,24 +13,101 @@
     <title>AIbot.com</title>
 </head>
 <body>
-    <main>
-        <section class="rightsect">
-            <button class="Return"  onclick="window.location.href='main.html'">
-                <a href="main.html">
-                    Return
-                </a>
-            </button>        
-        </section>
-
-        <section class="leftsect">
-        
-            <header class="header">
-                
-            </header>
-            <div class="chatbox">
-                <input class="textbox" type="text">
+    <section class="rightsect">
+        <a class="Return" href="main.html">
+            Return
+        </a>
+        <div class="options">
+            <div class="marks">
+                <img src="css/images/Bots icons/ConversationBot.png" alt="">
             </div>
-        </section>
-    </main>
+            <div class="marks">
+                <img src="css/images/Bots icons/AddABot.png" alt="">
+            </div>
+
+            <div class="marks">
+                <img src="css/images/Bots icons/CallBot.png" alt="">
+            </div>
+            <div class="marks">
+                <img src="css/images/Bots icons/Teachingbot.png" alt="">
+            </div>
+            <div class="marks">
+                <img src="css/images/Bots icons/Email.png" alt="">
+            </div>
+
+            <div class="marks">
+                <img src="css/images/Bots icons/Discord.png" alt="">
+            </div>
+            <div class="marks">
+                <img src="css/images/Bots icons/Bots.png" alt="">
+            </div>
+            <div class="marks">
+                <img src="css/images/Bots icons/GameingBot.png" alt="">
+            </div>
+        </div>
+    </section>
+
+    <section class="leftsect">
+        <header class="header">
+            <div class="bot"></div>
+            <h1 class="nome">Bot Demonstração</h1>
+            
+        </header>
+        <div class="chatbox">
+                <div class="chat-container">
+                    <div class="chat" id="chat-box">
+                        <div class="message_bot">Projeto em desenvolvimento...</div>
+                    </div>
+                </div>
+
+            <div class="sendText">
+                <input class="user-input" type="text" placeholder="Digite sua mensagem" id="user-input">
+                <button class="send-button" id="send-button">Enviar</button>
+            </div>
+        </div>
+    </section>
+    <script>
+        const chatBox = document.getElementById("chat-box");
+        const userInput = document.getElementById("user-input");
+        const sendButton = document.getElementById("send-button");
+
+        let messageCount = 0;
+
+        // Adicione um ouvinte de evento de teclado ao campo de entrada
+        userInput.addEventListener("keydown", (event) => {
+            if (event.key === "Enter") {
+                event.preventDefault(); // Impede o caractere "Enter" de quebrar a linha
+                sendMessage();
+            }
+        });
+
+        sendButton.addEventListener("click", sendMessage);
+
+        function sendMessage() {
+            const message = userInput.value;
+            if (message) {
+                const newMessage = document.createElement("div");
+                newMessage.textContent = message;
+                newMessage.classList.add("message");
+                chatBox.appendChild(newMessage);
+                userInput.value = "";
+                messageCount++;
+                // Verifica se a contagem atingiu 7 mensagens
+                if (messageCount % 5 === 0) {
+                    // Envia uma resposta após 20 mensagens
+                    const responseMessage = "Faça login para acessar esta funcionalidade!";
+                    const newResponse = document.createElement("div");
+                    newResponse.textContent = responseMessage;
+                    newResponse.classList.add("message_bot");
+                    chatBox.appendChild(newResponse);
+                }
+            }
+            chatbox.scrollTop = chatbox.scrollHeight;
+        }
+    </script>
 </body>
 </html>
+
+
+
+    

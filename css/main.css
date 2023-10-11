@@ -23,9 +23,6 @@ button:hover, a:hover {
     cursor: pointer;
 }
 
-body {
-    max-height: 100vh;
-}
 
 /* Estilos para o elemento hr na vertical */
 hr.vertical {
@@ -37,14 +34,13 @@ hr.vertical {
     transform: rotate(90deg);
 }
 
-
 /*Class*/
 
 /*Main section*/
 .main {
     width: auto;
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 1fr 4fr;
     position: absolute;
     top: 0;
     left: 0;
@@ -187,14 +183,8 @@ hr.vertical {
 /*Bot description*/
 .botdescription {
     color: white;
-    font-size: 16px;
+    font-size: 3vh;
     font-family: 'Roboto', sans-serif;
-}
-
-@media screen and (max-width: 768px) {
-    .botdescription {
-        font-size: 0.8rem;
-    }
 }
 
 /*Notifications*/
@@ -255,11 +245,43 @@ hr.vertical {
     justify-content: center;
     align-self: center;
     height: auto;
-    font-size: 15px;
+    margin: 0.7vh;
+    font-size: 2vh;
     font-family: 'Roboto', sans-serif;
     border-radius: 25px;
 }
 
 .linkhover:hover {
     color: rgb(255, 103, 255);
+}
+
+/*responsivity*/
+
+@media screen and (max-width: 764px) {
+    .Register, .Login{
+        font-size: 4vh;
+    }
+    .main {
+        grid-template-columns: 1fr;
+    }
+    .bodyleft{
+        grid-template-rows: 1fr;
+    }
+    .ProfileInfo:hover, .bot:hover {
+        transform: scale(1) translateY(10px);
+        transform-origin: top;
+    }
+    /*Notifications*/
+    .chatsNotifications {
+        position: absolute;
+        bottom: -8px;
+        right: 1;
+        opacity: 0.9;
+    }
+    .Select_bots{
+        grid-template-rows: 1fr;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        margin: 10px;
+    }
 }
