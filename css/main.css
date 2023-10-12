@@ -1,8 +1,10 @@
-/*Generals*/
+/*This sections is for setting the base*/
+
+/*Setting the base of h3*/
 h3 {
     transition: color 0.7s;
 }
-
+/*Setting the base of links and buttons*/
 a, button {
     text-decoration: none;
     background-color: transparent;
@@ -10,33 +12,25 @@ a, button {
     border: none;
     transition: all 0.6s;
 }
-
+/*Setting the base of hover over h3 and buttons*/
 h3:hover, button:hover {
     color: rgb(100, 100, 100);
 }
-
+/*Setting the base of hover over buttons*/
 button:hover {
-    transform: scale(1.05);
+    transform: scale(1.3);
 }
-
+/*Setting cursor pointer to buttons and links*/
 button:hover, a:hover {
     cursor: pointer;
 }
-
-
-/* Estilos para o elemento hr na vertical */
-hr.vertical {
-    width: 1px; 
-    height: 100px;
-    background-color: #ccc;
-    border: none; 
-    margin: 0 10px;
-    transform: rotate(90deg);
+body{
+    margin: 0;
 }
 
-/*Class*/
+/*This section is for the classes*/
 
-/*Main section*/
+/*Setting the main section grid and position*/
 .main {
     width: auto;
     display: grid;
@@ -48,47 +42,49 @@ hr.vertical {
     bottom: 0;
 }
 
-/*Left body section*/
+/*Setting the left body grid*/
 .bodyleft {
     background-color: rgb(32, 32, 32);
     display: grid;
-    grid-template-rows: 2fr 6fr;
+    grid-template-rows: 2fr 5fr;
     gap: 20px;
     width: auto;
 }
 
-/*User account section*/
+/*Setting the User account container*/
 .User_Account {
     display: grid;
     grid-template-rows: 1fr 2fr;
+    gap: 10px;
 }
 
-/*Account access*/
+/*Setting the User account access container*/
 .Account_access {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 5px;
 }
 
-/*Login and Register buttons*/
+/*Setting the style of the Login and Register buttons*/
 .Register, .Login {
+    margin: 10px;
     background-color: rgb(9, 189, 69);
     border-radius: 25px;
-    height: calc(100% - 10px);
-    width: calc(100% - 10px);
+    height:calc(100% - 10px);
+    width:calc(100% - 10px);
     color: white;
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
     transition: all 0.6s;
 }
-
+/*Setting a hover event for them*/
 .Register:hover, .Login:hover {
-    transform: scale(1.05);
-    background-color: rgb(19, 229, 169);
+    transform: scale(1.09);
+    background-color: rgb(14, 161, 75);
     color: white;
 }
 
-/*Profile info*/
+/*setting the Profile info section*/
 .ProfileInfo {
     display: grid;
     align-self: center;
@@ -98,10 +94,10 @@ hr.vertical {
     background-color: rgb(22, 22, 22);
     transition: all 0.5s;
 }
-
-.profileconfig {
-    width: 80px;
-    height: 80px;
+/*Adding and setting the user picture*/
+.Profilepic {
+    width: 13vh;
+    height: 13vh;
     border-radius: 20px;
     background-image: url(images/icons/user.webp);
     background-size: cover;
@@ -110,57 +106,43 @@ hr.vertical {
     justify-self: center;
     align-self: center;
 }
-
+/*Setting the user name style*/
 .UserName {
     align-self: center;
     justify-self: left;
     margin-left: 10px;
     color: white;
     font-family: 'Roboto', sans-serif;
-    font-size: 24px;
+    font-size: 3vh;
 }
 
+/*Setting a hover event*/
 .ProfileInfo:hover {
+    transform-origin: left;
     transform: scale(1.05);
+    border-radius: 0 20px 20px 0 ;
     cursor: pointer;
 }
 
-/*Bots selection section*/
+/*Setting the demonstration bots selection section*/
 .Select_bots {
     display: grid;
     grid-template-rows: repeat(4, 1fr);
 }
 
-/*Bot section*/
+/*Setting a bot container*/
 .bot {
-    padding-right: 10px;
+    border-radius:0 25px 25px 0;
+    height: 12vh;
     position: relative;
     align-self: flex-start;
-    height: 100px;
-    background-color: transparent;
-    margin-inline-start: 20px;
-    margin-inline-end: 20px;
-    border-radius:25px 25px 25px 25px;
     inline-size: auto;
     padding-inline-start: 24px;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(5px);
     gap: 5px;
-    transition: transform 0.4s;
+    transition: all .4s;
 }
 
-.bot:hover {
-    transform: scale(1.05);
-    cursor: pointer; 
-}
-
-.bot:active {
-    transition: all .2s;
-    transform: scale(1.05);
-}
-
-
-/*Bot profile*/
+/*Setting the bot profile*/
 .BotImg{
     background-size: cover;
     background-repeat: no-repeat;
@@ -168,35 +150,57 @@ hr.vertical {
     align-self: flex-start;
 }
 
+
+/*Adding the pictures for the bots, with linear gradient*/
 .catbotimg {
     background-image: linear-gradient(to left, transparent, black), url(images/kittenBOG.jpg);
-
 }
 
 .duckbot {
     background-image: linear-gradient(to left, transparent, black), url(images/duck\ picture.jpg);
-
 }
 
 .dogbot {
     background-image: linear-gradient(to left, transparent, black), url(images/Puppy.jpg);
-
 }
 
 .sadguy {
     background-image: linear-gradient(to left, transparent, black), url(images/SigmaDog.jpg);
 }
 
-/*Bot description*/
-.botdescription {
+/*Setting the responsive probities for this section*/
+@media screen and (max-width: 764px) {
+    .catbotimg {
+        background-image: linear-gradient(to bottom, transparent, black), url(images/kittenBOG.jpg);
+    }
+
+    .duckbot {
+        background-image: linear-gradient(to bottom, transparent, black), url(images/duck\ picture.jpg);
+    }
+
+    .dogbot {
+        background-image: linear-gradient(to bottom, transparent, black), url(images/Puppy.jpg);
+    }
+
+    .sadguy {
+        background-image: linear-gradient(to bottom, transparent, black), url(images/SigmaDog.jpg);
+    }
+}
+
+
+/*Setting the bots names*/
+.bot_name {
     color: white;
     font-size: 3vh;
     font-family: 'Roboto', sans-serif;
     transition: all .4s;
+    opacity: 0;
 }
 
-/*Notifications*/
+/*Setting the notifications stylus*/
 .chatsNotifications {
+    transition: all .1s;
+    opacity: 0;
     position: absolute;
     bottom: -5px;
     right: -5px;
@@ -210,16 +214,32 @@ hr.vertical {
     border-radius: 25px;
 }
 
-/*Right body section*/
+/*Adding hover and active propeties*/
+.bot:hover .chatsNotifications, .bot:hover .bot_name{
+    opacity: 1;
+}
+
+.bot:hover {
+    transform-origin: left;
+    transform: scale(1.1);
+    cursor: pointer; 
+}
+
+.bot:active {
+    transition: all .2s;
+    transform: scale(1.05);
+}
+
+/*Setting the Right body section*/
 .bodyright {
     width: auto;
     position: relative;
     display: grid;
-    grid-template-rows: 9fr 1fr;
+    grid-template-rows: 8fr 1fr;
     justify-content: center;
 }
 
-/*Background Image*/
+/*Adding and setting the background Image*/
 .bodyright::before {
     content: "";
     position: absolute;
@@ -235,39 +255,43 @@ hr.vertical {
     z-index: -1;
 }
 
-/*Button*/
+/*Setting the stylus for the start button*/
 .Start_Button {
     width: auto;
-    font-size: 40px;
+    font-size: 70px;
     font-weight: bolder;
     font-family: 'Roboto', sans-serif;
     align-self: center;
 }
 
-/*Credits*/
+/*Setting the credits*/
 .credits {
     background-color: transparent;
-    width: auto;
+    width: fit-content;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     justify-content: center;
     align-self: center;
-    height: auto;
     margin: 0.7vh;
-    font-size: 2vh;
+    font-size: 2.1vh;
     font-family: 'Roboto', sans-serif;
-    border-radius: 25px;
 }
-
+/*setting the hover stylus for the linkhover class*/
 .linkhover:hover {
-    color: rgb(100, 100, 100);
+    color: rgb(255, 92, 173);
 }
 
-/*responsivity*/
+/*Setting the responsivity*/
 
 @media screen and (max-width: 764px) {
     .Register, .Login{
         font-size: 4vh;
+    }
+    .credits{
+        font-size: 1.6vh;
+    }
+    .Start_Button{
+        font-size: 7.6vh;
     }
     .main {
         grid-template-columns: 1fr;
@@ -275,10 +299,13 @@ hr.vertical {
     .bodyleft{
         grid-template-rows: 1fr;
     }
-    .ProfileInfo:hover, .bot:hover {
-        transform: scale(1) translateY(10px);
+    .bodyright{
+        grid-template-rows: 5fr 1fr;
     }
-    /*Notifications*/
+    /*Setting the hover correctly, so that the page won't expand it*/
+    .ProfileInfo:hover, .bot:hover, .Register:hover, .Login:hover, .Start_Button:hover {
+        transform: scale(1) translateY(5px);
+    }
     .chatsNotifications {
         position: absolute;
         bottom: -8px;
@@ -290,5 +317,13 @@ hr.vertical {
         grid-template-columns: repeat(4, 1fr);
         gap: 10px;
         margin: 10px;
+    }
+    .bot{
+        border-radius: 25px;
+    }
+    .bot:active {
+        transition: all .2s;
+        transform-origin: center;
+        transform: scale(.9);
     }
 }
