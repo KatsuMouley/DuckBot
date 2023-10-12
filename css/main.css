@@ -306,6 +306,9 @@ body{
     .ProfileInfo:hover, .bot:hover, .Register:hover, .Login:hover, .Start_Button:hover {
         transform: scale(1) translateY(5px);
     }
+    .ProfileInfo:hover {
+        border-radius: 0 ;
+    }
     .chatsNotifications {
         position: absolute;
         bottom: -8px;
