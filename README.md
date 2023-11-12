@@ -20,4 +20,4 @@ We intend to create a site where you can create a customizable, but yet simple, 
 
 
 # Libraries(Still to come)
-First over all, this topic still in process, we didn't choose any libraries yet, but we intend to choose simple libraries like Dialogflow or Wit.ai, to be specific, we don't intend to use languages that changes the overflow of the fundamental js script, since this is a "do it to learn project". 
+First over all, this topic still in process, we didn't choose any libraries yet, but we intend to choose simple libraries to help on our coding, to be specific, we don't intend to use libraries that changes the overflow of the fundamental js script, since this is a "do it to learn project". 
