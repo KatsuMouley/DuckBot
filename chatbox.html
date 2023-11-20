@@ -1,48 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="duck.ico">
-    <link rel="stylesheet" href="css/chatbox.css"><link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/chatbox.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <title>AIbot.com</title>
 </head>
+
 <body>
     <section class="rightsect">
         <a class="Return" href="main.html">
             Return
         </a>
-        <div class="options">
-            <div class="marks">
-                <img src="css/images/Bots icons/ConversationBot.png" alt="">
+        <div class="historyMenu">
+            <div class="history">
             </div>
-            <div class="marks">
-                <img src="css/images/Bots icons/AddABot.png" alt="">
-            </div>
+            <div class="historyConfig">
+                <button class="historyConfigButton">Duplicate Chat</button>
+                <button class="historyConfigButton">Reset Chat</button>
+                <button class="historyConfigButton" onclick="saveChatContent()">Salvar Chat</button>
+                <button id="new-chat-button" class="historyConfigButton">New Chat</button>
 
-            <div class="marks">
-                <img src="css/images/Bots icons/CallBot.png" alt="">
-            </div>
-            <div class="marks">
-                <img src="css/images/Bots icons/Teachingbot.png" alt="">
-            </div>
-            <div class="marks">
-                <img src="css/images/Bots icons/Email.png" alt="">
-            </div>
-
-            <div class="marks">
-                <img src="css/images/Bots icons/Discord.png" alt="">
-            </div>
-            <div class="marks">
-                <img src="css/images/Bots icons/Bots.png" alt="">
-            </div>
-            <div class="marks">
-                <img src="css/images/Bots icons/GameingBot.png" alt="">
             </div>
         </div>
     </section>
@@ -51,14 +40,14 @@
         <header class="header">
             <div class="bot"></div>
             <h1 class="nome">Bot Demonstração</h1>
-            
+
         </header>
         <div class="chatbox">
-                <div class="chat-container">
-                    <div class="chat" id="chat-box">
-                        <div class="message_bot">Projeto em desenvolvimento...</div>
-                    </div>
+            <div class="chat-container">
+                <div class="chat" id="chat-box">
+                    <div class="message_bot">Projeto em desenvolvimento...</div>
                 </div>
+            </div>
 
             <div class="sendText">
                 <input class="user-input" type="text" placeholder="Digite sua mensagem" id="user-input">
@@ -66,48 +55,7 @@
             </div>
         </div>
     </section>
-    <script>
-        const chatBox = document.getElementById("chat-box");
-        const userInput = document.getElementById("user-input");
-        const sendButton = document.getElementById("send-button");
-
-        let messageCount = 0;
-
-        // Adicione um ouvinte de evento de teclado ao campo de entrada
-        userInput.addEventListener("keydown", (event) => {
-            if (event.key === "Enter") {
-                event.preventDefault(); // Impede o caractere "Enter" de quebrar a linha
-                sendMessage();
-            }
-        });
-
-        sendButton.addEventListener("click", sendMessage);
-
-        function sendMessage() {
-            const message = userInput.value;
-            if (message) {
-                const newMessage = document.createElement("div");
-                newMessage.textContent = message;
-                newMessage.classList.add("message");
-                chatBox.appendChild(newMessage);
-                userInput.value = "";
-                messageCount++;
-                // Verifica se a contagem atingiu 7 mensagens
-                if (messageCount % 5 === 0) {
-                    // Envia uma resposta após 20 mensagens
-                    const responseMessage = "Faça login para acessar esta funcionalidade!";
-                    const newResponse = document.createElement("div");
-                    newResponse.textContent = responseMessage;
-                    newResponse.classList.add("message_bot");
-                    chatBox.appendChild(newResponse);
-                }
-            }
-            chatbox.scrollTop = chatbox.scrollHeight;
-        }
-    </script>
+    <script type="module" src="JS/chatbot.js"></script>
 </body>
+
 </html>
-
-
-
-    

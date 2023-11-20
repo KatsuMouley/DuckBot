@@ -30,7 +30,7 @@ body{
 .rightsect{
     display: flex;
     flex-direction: column;
-    background-color: rgb(53, 53, 53);
+    background-color: rgb(28, 28, 28);
 }
 
 /*Return*/
@@ -51,36 +51,94 @@ body{
     background-color: rgb(212, 0, 255);
 }
 
-.options{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 5vh;
-    align-self: center;
-}
-.marks{
-    background-color: rgb(128, 128, 128);
-    margin: 0.5021vh;
-    padding: 0.7vh;
-    border-radius: 25px;
+.historyMenu{
     display: flex;
-    justify-content: center;
-    transition: all 0.6s;
+    flex-direction: column;
+    gap: 1vh;
 }
-.marks img{
-    align-self: center;
-    height: 15vh;
+.history{
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow: auto;
+    gap: 5px
 }
-
-.marks:hover{
+.save{
+    display: flex;
+    flex-direction: row;
+    background-color: #171717;
+    border-radius: 10px;
+    height: fit-content;
+    width: 43vh;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    justify-content: space-between;
+}
+.save:hover{
     cursor: pointer;
-    background-color: rgb(238, 154, 255);
+}
+.currentChat{
+    background-color: #302b2b;
+    transform: scale(0.9);
+}
+.SaveName{
+    margin-left: 3vh;
+    transform-origin: left;
+    transition: all 1s;
+    font-size: 3.5vh;
+}
+.SaveName:hover{
+    position: relative;
+    transform: scale(1.1);
+}
+.addSave:hover{
+    cursor: pointer;
 }
 
-.marks:active{
-    transition: all 0.1s;
-    transform: scale(1.03);
-    background-color: rgb(212, 0, 255);
+.SaveMoreConfig{
+    align-self: center;
 }
+.SaveMoreConfigButton{
+    font-size: 4vh;
+    margin-bottom: 10px;
+}
+
+.SaveMoreConfigButton:hover{
+    position: relative;
+    transform: scale(1.1);
+}
+.historyConfigButton{
+    background: #fff;
+    height: fit-content;
+    color: #171717;
+    padding: 1vh;
+    margin: 1vh;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.7vh;
+    border-radius: 20px;
+    transition: all 0.3s;
+}
+.historyConfigButton:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.historyConfigButton:active{
+    transition: all 0.1s;
+    transform: scale(1.1);
+}
+
+.historyConfig{
+    height: 17vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: #171717;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
 /*left section*/
 .leftsect{
     width: 100%;
@@ -92,7 +150,7 @@ body{
     justify-content: flex-start;
     flex-direction: row;
     width: 100%;
-    background-color: rgb(82, 82, 82);
+    background-color: rgb(39, 39, 39);
 }
 
 
@@ -137,7 +195,7 @@ body{
 
 
 .chatbox {
-    background-color: #444444;
+    background-color: #171717;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     display: flex;
@@ -181,6 +239,7 @@ body{
     padding: 10px;
     margin-bottom: 10px;
     transition: all .4s;
+    justify-content: left;
 }
 
 .message:last-child {
@@ -191,6 +250,7 @@ body{
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px;
+    justify-content: right;
 }
 
 .send-button {
