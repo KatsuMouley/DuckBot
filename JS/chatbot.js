@@ -3,7 +3,8 @@ const userInput = document.getElementById("user-input");
 const sendButton = document.getElementById("send-button");
 const history = document.querySelector('.history');
 const newChatButton = document.getElementById("new-chat-button");
-const predefinedResponses = {
+//import {Type} from "main.js";
+/*const predefinedResponses = {
     "o14iffas": "Clique em Default para começar a salvar as conversas.",
     "oi": "Olá! Como posso ajudar?",
     "ola": "Oi! Como posso ser útil hoje?",
@@ -41,7 +42,7 @@ const predefinedResponses = {
     "quais são suas habilidades?": "Tenho habilidades em processamento de linguagem natural, resolução de problemas e fornecimento de informações. Como posso usar minhas habilidades para ajudar você hoje?",
 
     // Adicione mais respostas conforme necessário
-};
+};*/
 
 
 let messageCount = 0;
@@ -52,11 +53,11 @@ let selectedSave = null;
 userInput.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
         event.preventDefault(); // Impede o caractere "Enter" de quebrar a linha
-        sendMessage();
+        sendMessage()
     }
 });
 
-sendButton.addEventListener("click", sendMessage);
+sendButton.addEventListener("click", sendMessage)
 newChatButton.addEventListener("click", addSave);
 
 function sendMessage() {
@@ -70,13 +71,9 @@ function sendMessage() {
         chatBox.appendChild(newMessage);
         userInput.value = "";
         messageCount++;
-        // Codifica a mensagem para URL
-        const encodedMessage = encodeURIComponent(message);
-        // Adiciona a mensagem codificada à URL do Replit
-        const replitUrl = "www.google.com";
-        const urlWithMessage = `${replitUrl}/${encodedMessage}`;
         // Envia a mensagem para o Replit (você precisará implementar esta parte)
-        sendMessageToReplit(message);
+        
+        sendMessageToReplit(message)
         // Armazena o Chatbox dentro do save atual
         saveCurrentChatMessages();
 
@@ -110,22 +107,29 @@ function loadHistory() {
                 newMessage.classList.add("message");
                 chatBox.appendChild(newMessage);
             });
-
-            chatBox.scrollTop = chatBox.scrollHeight;
         }
     }
 }
 
 function sendMessageToReplit(message) {
     const lowercaseMessage = message.toLowerCase();
-
-    // Verifica se há uma resposta pré-programada
-    if (predefinedResponses.hasOwnProperty(lowercaseMessage)) {
-        const botResponse = predefinedResponses[lowercaseMessage];
-        addBotMessage(botResponse);
-    } else {
-        console.error('Resposta pré-programada não encontrada para:', message);
-    }
+    console.log(lowercaseMessage);
+    const type = 'Type5'
+    fetch(`https://duckbots.codecatmeow.repl.co/?query=Type6${lowercaseMessage}`)
+      .then(response => response.text())
+      .then(result => {
+        const newMessage = document.createElement("div");
+        newMessage.textContent = result;
+        newMessage.classList.add("message_bot"); // Adicione a classe 'message_bot' para identificar mensagens do robô
+        chatBox.appendChild(newMessage);
+        messageCount++;
+    
+      })
+      .catch(error => {
+        console.error(error);
+      });
+        saveCurrentChatMessages();
+        updateHistory();
 }
 
 
@@ -270,7 +274,6 @@ function initializeDefaultSave() {
         updateHistory();
 
         // Envie uma mensagem inicial ao bot (por exemplo, "oi")
-        sendMessageToReplit("o14iffas");
     }
 }
 

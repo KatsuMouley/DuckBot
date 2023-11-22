@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log('Bot clicado: ' + botId);
             changeBackgroundImage(botId);
         });
+//        botDiv.classList.add('CurrentBot');
     });
 });
 
@@ -50,3 +51,6 @@ function ShowBots() {
         showbots = 0;
     }
 }
+
+
+//export function type() {
