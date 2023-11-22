@@ -12,11 +12,11 @@ a, button {
 }
 
 h3:hover, button:hover {
-    color: rgb(255, 103, 255);
+    color: rgb(100, 100, 100);
 }
 
 button:hover {
-    transform: scale(1.2);
+    transform: scale(1.05);
 }
 
 button:hover, a:hover {
@@ -78,46 +78,50 @@ hr.vertical {
     width: calc(100% - 10px);
     color: white;
     font-family: 'Roboto', sans-serif;
-    font-size: 14px;
+    font-size: 18px;
     transition: all 0.6s;
 }
 
 .Register:hover, .Login:hover {
     transform: scale(1.05);
-    background-color: rgb(160, 7, 127);
+    background-color: rgb(19, 229, 169);
     color: white;
 }
 
 /*Profile info*/
 .ProfileInfo {
     display: grid;
+    align-self: center;
+    height: 100px;
     grid-template-columns: 1fr 3fr;
     gap: 15px;
     background-color: rgb(22, 22, 22);
-    border-radius: 25px;
     transition: all 0.5s;
-    transform-origin: left;
 }
 
 .profileconfig {
     width: 80px;
     height: 80px;
-    border-radius: 50%;
+    border-radius: 20px;
     background-image: url(images/icons/user.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+    justify-self: center;
+    align-self: center;
 }
 
 .UserName {
     align-self: center;
+    justify-self: left;
+    margin-left: 10px;
     color: white;
     font-family: 'Roboto', sans-serif;
-    font-size: 20px;
+    font-size: 24px;
 }
 
 .ProfileInfo:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     cursor: pointer;
 }
 
@@ -132,52 +136,55 @@ hr.vertical {
     padding-right: 10px;
     position: relative;
     align-self: flex-start;
-    border-radius: 50px 20px 20px 50px;
-    background-color: rgb(20, 20, 20);
-    width: auto;
-    display: grid;
-    grid-template-columns: 1fr 3fr;
+    height: 100px;
+    background-color: transparent;
+    margin-inline-start: 20px;
+    margin-inline-end: 20px;
+    border-radius:25px 25px 25px 25px;
+    inline-size: auto;
+    padding-inline-start: 24px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(5px);
     gap: 5px;
-    transition: transform 0.4s, background-color 0s;
-    transform-origin: left;
+    transition: transform 0.4s;
 }
 
 .bot:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     cursor: pointer; 
 }
 
 .bot:active {
-    background-color: rgb(76, 5, 78);
+    transition: all .2s;
+    transform: scale(1.05);
 }
 
+
 /*Bot profile*/
-.BotImg {
-    max-width: 75px;
-    max-height: 75px;
-    min-width: 50px; 
-    border-radius: 50%;
+.BotImg{
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: center;
     align-self: flex-start;
-    padding-top: 100%;
 }
 
 .catbotimg {
-    background-image: url(images/kittenBOG.jpg);
+    background-image: linear-gradient(to left, transparent, black), url(images/kittenBOG.jpg);
+
 }
 
 .duckbot {
-    background-image: url(images/duck\ picture.jpg);
+    background-image: linear-gradient(to left, transparent, black), url(images/duck\ picture.jpg);
+
 }
 
 .dogbot {
-    background-image: url(images/Puppy.jpg);
+    background-image: linear-gradient(to left, transparent, black), url(images/Puppy.jpg);
+
 }
 
 .sadguy {
-    background-image: url(images/SigmaDog.jpg);
+    background-image: linear-gradient(to left, transparent, black), url(images/SigmaDog.jpg);
 }
 
 /*Bot description*/
@@ -185,6 +192,7 @@ hr.vertical {
     color: white;
     font-size: 3vh;
     font-family: 'Roboto', sans-serif;
+    transition: all .4s;
 }
 
 /*Notifications*/
@@ -252,7 +260,7 @@ hr.vertical {
 }
 
 .linkhover:hover {
-    color: rgb(255, 103, 255);
+    color: rgb(100, 100, 100);
 }
 
 /*responsivity*/
@@ -269,7 +277,6 @@ hr.vertical {
     }
     .ProfileInfo:hover, .bot:hover {
         transform: scale(1) translateY(10px);
-        transform-origin: top;
     }
     /*Notifications*/
     .chatsNotifications {
@@ -279,7 +286,7 @@ hr.vertical {
         opacity: 0.9;
     }
     .Select_bots{
-        grid-template-rows: 1fr;
+        grid-template-rows: 5fr;
         grid-template-columns: repeat(4, 1fr);
         gap: 10px;
         margin: 10px;
