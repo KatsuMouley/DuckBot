@@ -18,8 +18,8 @@ button:hover, a:hover{
 body{
     margin: 0;
     padding: 0;
-    display: grid;
-    grid-template-columns: 1fr 3.5fr;
+    display: flex;
+    flex-direction: row;
     position: absolute;
     top: 0;
     left: 0;
@@ -31,6 +31,7 @@ body{
     display: flex;
     flex-direction: column;
     background-color: rgb(28, 28, 28);
+    width: 30%;
 }
 
 /*Return*/
@@ -229,6 +230,7 @@ body{
     margin-top: 10px; /* Adicione algum espaço superior ao bloco de entrada de texto e botão */
 }
 
+
 .message, .message_bot {
     height: fit-content;
     width: fit-content;
@@ -239,7 +241,7 @@ body{
     padding: 10px;
     margin-bottom: 10px;
     transition: all .4s;
-    justify-content: left;
+    max-width: 75%;
 }
 
 .message:last-child {
@@ -250,7 +252,6 @@ body{
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px;
-    justify-content: right;
 }
 
 .send-button {
@@ -268,10 +269,14 @@ body{
     transform: translatex(-10px);
     transform-origin: right;
 }
+.UserMessage{
+    justify-content: flex-end;
+}
 .message_bot {
     background-color: #ff5100;
     color: #ffffff;
     font-size: 6vh;
+    justify-content: flex-start;
 }
 .message_bot:hover, .message:hover{
     transform-origin: left;

@@ -40,15 +40,15 @@ body{
     background-color: rgb(32, 32, 32);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     gap: 20px;
     width: 25%;
 }
 
 /*Setting the demonstration bots selection section*/
 .Select_bots {
+    z-index: 2;
     position: relative;
-    top: 5vh;
     display: grid;
     grid-template-rows:  1fr;
     gap: 20px;
@@ -92,25 +92,13 @@ body{
     background-image: linear-gradient(to left, transparent, black), url(images/SigmaDog.jpg);
 }
 
-/*Setting the responsive probities for this section*/
-@media screen and (max-width: 764px) {
-    .catbotimg {
-        background-image: linear-gradient(to bottom, transparent, black), url(images/kittenBOG.jpg);
-    }
-
-    .duckbot {
-        background-image: linear-gradient(to bottom, transparent, black), url(images/duck\ picture.jpg);
-    }
-
-    .dogbot {
-        background-image: linear-gradient(to bottom, transparent, black), url(images/Puppy.jpg);
-    }
-
-    .sadguy {
-        background-image: linear-gradient(to bottom, transparent, black), url(images/SigmaDog.jpg);
-    }
+#crazycat {
+    background-image: linear-gradient(to left, transparent, black), url(images/kitten.jpg);
 }
 
+#uglyduck {
+    background-image: linear-gradient(to left, transparent, black), url(images/prupru.jpg);
+}
 
 /*Setting the bots names*/
 .bot_name {
@@ -164,25 +152,32 @@ body{
 }
 .ShowBots{
     align-self: flex-start;
+    position: relative;
+    left: 1%;
     background-color: white;
     color: black;
-    border-radius: 10px;
-    font-size: 3vh;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 18px;
     transition: all 0.3s;
 }
+/*
+.ShowBots p{
+    writing-mode: vertical-rl;
+}
+*/
 .ShowBots:hover{
     color: rgb(255, 255, 255);
     background-color: rgb(22, 21, 21);
 }
 /*Adding and setting the background Image*/
-.bodyright::before {
+.BGimg{
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('images/duck\ picture.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
