@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../duck.ico">
+    <title>Explicação do Código</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Duck.AI</h1>
+        <nav>
+            <ul>
+                <li><a href="../main.html">Voltar ao Chat</a></li>
+                <li><a href="explicacao.html">Explicação do Código</a></li>
+                <li><a href="creditos.html">Créditos</a></li>
+                <li><a href="planos.html">Planos Futuros</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="content">
+        <h2>Explicação Detalhada do Código</h2>
+        <p>Nesta seção, fornecemos uma análise minuciosa do código utilizado no Projeto Duck.AI. Abordaremos os
+            principais
+            conceitos, estruturas e funcionalidades implementadas, oferecendo uma compreensão aprofundada do
+            funcionamento do projeto. Detalhe, a explicação foi gerada por uma AI!</p>
+
+        <h3>Variáveis Globais e Seleção de Elementos HTML:</h3>
+        <p><code>chatBox</code>, <code>userInput</code>, <code>sendButton</code>, <code>history</code>,
+            <code>newChatButton</code>: Armazenam referências a elementos HTML usando
+            <code>document.getElementById</code> e <code>document.querySelector</code>.</p>
+        <p><code>predefinedResponses</code>: Um objeto contendo pares chave-valor onde as chaves são mensagens de
+            entrada do usuário e os valores são as respostas pré-programadas do bot.</p>
+        <p><code>messageCount</code>: Conta o número total de mensagens exibidas no chat.</p>
+        <p><code>saves</code>: Uma array que armazena objetos representando diferentes conversas salvas.</p>
+        <p><code>selectedSave</code>: Armazena o estado do save selecionado.</p>
+
+        <h3>Event Listeners:</h3>
+        <p><code>userInput.addEventListener</code>: Adiciona um ouvinte de evento de teclado para a tecla "Enter" no
+            campo de entrada do usuário.</p>
+        <p><code>sendButton.addEventListener</code> e <code>newChatButton.addEventListener</code>: Adicionam ouvintes de
+            evento para os botões de envio e criação de nova conversa.</p>
+
+        <h3>Função <code>sendMessage</code>:</h3>
+        <p>Envia a mensagem do usuário para o chat, cria um novo elemento de mensagem no DOM, adiciona a mensagem ao
+            histórico, e faz outras ações relacionadas.</p>
+
+        <h3>Função <code>loadHistory</code>:</h3>
+        <p>Carrega o histórico de mensagens do chat a partir do save selecionado.</p>
+
+        <h3>Função <code>sendMessageToReplit</code>:</h3>
+        <p>Verifica se a mensagem do usuário tem uma resposta pré-programada no objeto <code>predefinedResponses</code>
+            e exibe a resposta correspondente do bot.</p>
+
+        <h3>Função <code>addBotMessage</code>:</h3>
+        <p>Adiciona uma mensagem do bot ao chat e realiza ações relacionadas.</p>
+
+        <h3>Função <code>deleteSave</code>:</h3>
+        <p>Exclui um save específico da array de saves.</p>
+
+        <h3>Função <code>addSave</code>:</h3>
+        <p>Adiciona um novo save à array de saves.</p>
+
+        <h3>Função <code>editSaveName</code>:</h3>
+        <p>Permite a edição do nome de um save quando o usuário clica duas vezes sobre ele.</p>
+
+        <h3>Funções <code>updateSaveName</code> e <code>updateHistory</code>:</h3>
+        <p>Atualizam o nome do save e o histórico de saves, respectivamente.</p>
+
+        <h3>Função <code>saveCurrentChatMessages</code>:</h3>
+        <p>Salva as mensagens do chat no save atual.</p>
+
+        <h3>Função <code>initializeDefaultSave</code>:</h3>
+        <p>Inicializa um save padrão se a array de saves estiver vazia e envia uma mensagem inicial ao bot.</p>
+
+        <h3>Condição e Chamada de Função no Final do Código:</h3>
+        <p>Verifica se a função <code>initializeDefaultSave</code> já foi chamada antes e, se não, a chama.</p>
+
+        <h3>Função <code>window.deleteAllSaves</code>:</h3>
+        <p>Limpa a array de saves, reseta o save selecionado, atualiza o histórico na interface e limpa as mensagens no
+            chat.</p>
+
+        <h3>Funções <code>serializeSaves</code> e <code>deserializeSaves</code>:</h3>
+        <p>Convertem as informações dos saves para e a partir de strings JSON.</p>
+
+        <h3>Chamada de Função <code>loadHistory</code>:</h3>
+        <p>Carrega o histórico ao inicializar a página.</p>
+    </section>
+
+
+    <footer class="sticky">
+        <p>&copy; 2023 Projeto Duck.AI. Todos os direitos reservados.</p>
+    </footer>
+</body>
+
+</html>

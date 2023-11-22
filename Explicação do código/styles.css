@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: rgb(9, 189, 69);
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+    transition: all 1s;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover{
+    color: rgb(209, 31, 209);
+}
+
+section.content {
+    margin: 20px;
+}
+
+footer {
+    background-color: rgb(9, 189, 69);
+    color: white;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.sticky{
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: sticky;
+    justify-content: center;
+}
+.sticky p{
+    align-self: center;
+}

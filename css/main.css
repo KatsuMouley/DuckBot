@@ -35,6 +35,22 @@ body{
     bottom: 0;
 }
 
+.Return{
+    width: fit-content;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.8vw;
+    margin: 1vw;
+    padding: 1.9vh 1.8vw;
+    background-color: rgb(9, 189, 69);
+    border-radius: 35px;
+    transition: 0.6s;
+}
+
+.Return:hover{
+    transform: scale(1.1);
+    transform-origin: left;
+    background-color: rgb(212, 0, 255);
+}
 /*Setting the left body grid*/
 .bodyleft {
     background-color: rgb(32, 32, 32);
