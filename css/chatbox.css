@@ -231,7 +231,7 @@ body{
 }
 
 
-.message, .message_bot {
+.message, .message_bot, .message_saved {
     height: fit-content;
     width: fit-content;
     background-color: #ffffff;
@@ -243,6 +243,8 @@ body{
     transition: all .4s;
     max-width: 75%;
 }
+
+
 
 .message:last-child {
     margin-bottom: 0; /* Removendo a margem inferior do último elemento de mensagem */
@@ -275,8 +277,12 @@ body{
 .message_bot {
     background-color: #ff5100;
     color: #ffffff;
-    font-size: 6vh;
     justify-content: flex-start;
+}
+
+.message_saved{
+    background-color: gray;
+    color: #ffffff;
 }
 .message_bot:hover, .message:hover{
     transform-origin: left;

@@ -45,6 +45,7 @@ const newChatButton = document.getElementById("new-chat-button");
 };*/
 
 
+
 let messageCount = 0;
 let saves = [];
 let selectedSave = null;
@@ -65,29 +66,32 @@ function sendMessage() {
 
     if (message) {
         const newMessage = document.createElement("div");
-        newMessage.textContent = message;
+        newMessage.textContent = `User: ${message}`;
         newMessage.classList.add("message");
         newMessage.classList.add("UserMessage");
         chatBox.appendChild(newMessage);
         userInput.value = "";
         messageCount++;
         // Envia a mensagem para o Replit (você precisará implementar esta parte)
-        
-        sendMessageToReplit(message)
-        // Armazena o Chatbox dentro do save atual
-        saveCurrentChatMessages();
 
+        sendMessageToReplit(message);
+        saveCurrentChatMessages();
         // Atualiza o histórico após enviar a mensagem
         updateHistory();
 
-        // Mantém o save selecionado após enviar a mensagem
-        if (selectedSave) {
-            const selectedSaveBlock = document.getElementById("SaveId" + selectedSave.saveId);
-            selectedSaveBlock.classList.add('currentChat');
-        }
+        currentSaveKeepSelected();
 
         chatBox.scrollTop = chatBox.scrollHeight;
     }
+}
+
+function currentSaveKeepSelected() {
+    // Mantém o save selecionado após enviar a mensagem
+    if (selectedSave) {
+        const selectedSaveBlock = document.getElementById("SaveId" + selectedSave.saveId);
+        selectedSaveBlock.classList.add('currentChat');
+    }
+
 }
 
 function loadHistory() {
@@ -105,6 +109,8 @@ function loadHistory() {
                 const newMessage = document.createElement("div");
                 newMessage.textContent = message;
                 newMessage.classList.add("message");
+                newMessage.classList.add("message_saved");
+
                 chatBox.appendChild(newMessage);
             });
         }
@@ -114,36 +120,37 @@ function loadHistory() {
 function sendMessageToReplit(message) {
     const lowercaseMessage = message.toLowerCase();
     console.log(lowercaseMessage);
-    const type = 'Type5'
-    fetch(`https://duckbots.codecatmeow.repl.co/?query=Type6${lowercaseMessage}`)
-      .then(response => response.text())
-      .then(result => {
-        const newMessage = document.createElement("div");
-        newMessage.textContent = result;
-        newMessage.classList.add("message_bot"); // Adicione a classe 'message_bot' para identificar mensagens do robô
-        chatBox.appendChild(newMessage);
-        messageCount++;
-    
-      })
-      .catch(error => {
-        console.error(error);
-      });
-        saveCurrentChatMessages();
-        updateHistory();
-}
+    const type = 'Type1'
+    fetch(`https://duckbots.codecatmeow.repl.co/?query=${type}${lowercaseMessage}`)
+        .then(response => response.text())
+        .then(result => {
+            const newMessage = document.createElement("div");
+            newMessage.textContent = `Bot: ${result}`;
+            newMessage.classList.add("message_bot");// Adicione a classe 'message_bot' para identificar mensagens do robô
+            newMessage.classList.add("message");
+            chatBox.appendChild(newMessage);
+            messageCount++;
+            saveCurrentChatMessages();
+            currentSaveKeepSelected();
+        })
+        .catch(error => {
+            console.error(error);
+        });
 
+    updateHistory();
+}
 
 function addBotMessage(message) {
     const newMessage = document.createElement("div");
     newMessage.textContent = message;
-    newMessage.classList.add("message_bot"); // Adicione a classe 'message_bot' para identificar mensagens do robô
+    newMessage.classList.add("message_bot");
+    newMessage.classList.add("message"); // Adicione a classe 'message_bot' para identificar mensagens do robô
     chatBox.appendChild(newMessage);
     messageCount++;
     saveCurrentChatMessages();
     updateHistory();
     chatBox.scrollTop = chatBox.scrollHeight;
 }
-
 
 function deleteSave(saveId) {
     const indexToDelete = saves.findIndex((save) => save.saveId === saveId);
@@ -194,6 +201,7 @@ function updateSaveName(saveId, newName) {
         saves[saveIndex].saveName = newName;
     }
 }
+
 function updateHistory() {
     history.innerHTML = "";
 
@@ -231,10 +239,10 @@ function updateHistory() {
 
         const saveMoreConfig = document.createElement("div");
         saveMoreConfig.classList.add("SaveMoreConfig");
-
         const deleteButton = document.createElement("button");
         deleteButton.classList.add("SaveMoreConfigButton");
         deleteButton.innerHTML = "&#x1F5D1";
+
         deleteButton.onclick = function () {
             deleteSave(save.saveId);
         };
@@ -253,7 +261,7 @@ function saveCurrentChatMessages() {
         const saveIndex = saves.findIndex((save) => save.saveId === saveId);
 
         if (saveIndex !== -1) {
-            const currentChatMessages = Array.from(chatBox.querySelectorAll(".message")).map(message => message.textContent);
+            const currentChatMessages = Array.from(chatBox.querySelectorAll(".message ")).map(message => message.textContent);
             saves[saveIndex].chatContent = currentChatMessages;
             updateHistory();
         }
@@ -277,8 +285,6 @@ function initializeDefaultSave() {
     }
 }
 
-
-// Verifica se a função initializeDefaultSave já foi chamada antes
 if (saves.length === 0) {
     initializeDefaultSave();
 }
@@ -289,15 +295,6 @@ window.deleteAllSaves = function () {
     updateHistory(); // Atualiza o histórico na interface
     chatBox.innerHTML = ""; // Limpa as mensagens no Chatbox
 }
-
-function serializeSaves() {
-    return JSON.stringify(saves);
-}
-
-function deserializeSaves(serializedData) {
-    return JSON.parse(serializedData);
-}
-
 
 loadHistory();
 
