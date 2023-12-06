@@ -45,11 +45,9 @@ let showButton = document.querySelector('.ShowBots');
 function ShowBots() {
     if (showbots === 0) {
         bodyleft.classList.add('none');
-        showButton.innerHTML = '<p>mostrar</P>';
         showbots = 1;
     } else {
         bodyleft.classList.remove('none');
-        showButton.innerHTML = '<p>esconder</P>';
         showbots = 0;
     }
 }
