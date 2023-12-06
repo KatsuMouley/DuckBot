@@ -19,6 +19,16 @@ button:hover, a:hover {
 }
 body{
     margin: 0;
+    top: 0;
+    left: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/kittenBOG.jpg');
+    height: 100%;
+    background-attachment: fixed;
+    background-color: #4e4e4e; /* Used if the image is unavailable */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    z-index: -1;
 }
 
 /*This section is for the classes*/
@@ -38,8 +48,8 @@ body{
 .Return{
     width: fit-content;
     font-family: 'Roboto', sans-serif;
-    font-size: 1.8vw;
-    margin: 1vw;
+    font-size: 25px;
+    margin: 2px;
     padding: 1.9vh 1.8vw;
     background-color: rgb(9, 189, 69);
     border-radius: 35px;
@@ -172,9 +182,9 @@ body{
     left: 1%;
     background-color: white;
     color: black;
-    padding: 15px;
+    padding: 5px ;
     border-radius: 5px;
-    font-size: 18px;
+    font-size: 12px;
     transition: all 0.3s;
 }
 /*
@@ -186,21 +196,6 @@ body{
     color: rgb(255, 255, 255);
     background-color: rgb(22, 21, 21);
 }
-/*Adding and setting the background Image*/
-.BGimg{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    filter: brightness(0.5);
-    z-index: -1;
-}
-
 /*Setting the stylus for the start button*/
 .Start_Button {
     width: auto;
