@@ -44,9 +44,13 @@ let showButton = document.querySelector('.ShowBots');
 
 function ShowBots() {
     if (showbots === 0) {
+        showButton.classList.remove('arrowRight');
+        showButton.classList.add('arrowLeft');
         bodyleft.classList.add('none');
         showbots = 1;
     } else {
+        showButton.classList.remove('arrowLeft');
+        showButton.classList.add('arrowRight');
         bodyleft.classList.remove('none');
         showbots = 0;
     }

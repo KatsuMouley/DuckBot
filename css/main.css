@@ -84,6 +84,7 @@ body{
 .bot {
     border-radius:0 25px 25px 0;
     height: 12vh;
+    width: 5vh;
     position: relative;
     align-self: flex-start;
     inline-size: auto;
@@ -184,14 +185,17 @@ body{
     border-radius: 5px;
     transition: all 0.6s;
 }
-/*
-.ShowBots p{
-    writing-mode: vertical-rl;
+
+.arrowUp{
+    transform: rotate(90deg);
 }
-*/
-.ShowBots:hover{
-    transform: scale(1.1);
+.arrowLeft{
+    transform: scale(1);
 }
+.arrowRight{
+    transform: scale(-1);
+}
+
 /*Setting the stylus for the start button*/
 .Start_Button {
     width: auto;
@@ -220,15 +224,16 @@ body{
 
 /*Setting the responsivity*/
 
-@media screen and (max-width: 764px) {
-    .Register, .Login{
-        font-size: 4vh;
+@media screen and (max-width: 900px) {
+
+    .Return{
+        font-size: 12px;
     }
     .credits{
-        font-size: 1.6vh;
+        font-size: 12px;
     }
     .Start_Button{
-        font-size: 7.6vh;
+        font-size: 18px;
     }
     .main {
         grid-template-columns: 1fr;
